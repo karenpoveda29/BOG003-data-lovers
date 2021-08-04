@@ -1,0 +1,16 @@
+.card-pokemon {
+    background-color: #ecd55578;
+    border: 2px solid #bfbbbbcf;
+    border-radius: 5px;
+    width: 18%;
+    margin-bottom: 20px;
+}
+#section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media(max-width:500%){
+    
+}
