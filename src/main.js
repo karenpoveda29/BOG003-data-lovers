@@ -4,7 +4,7 @@ import data from './data/pokemon/pokemon.js';
 
 
 const insertarPokemon = (number,type,name,maxCp,img) => {
-    const section = document.getElementById("section");
+    const section = document.getElementById("pokemon-cards");
     section.insertAdjacentHTML("beforeend", ` 
         <div class="card-pokemon"> 
             <img class="image-pokemon" src="${img}">

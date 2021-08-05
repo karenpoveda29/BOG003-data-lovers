@@ -1,13 +1,139 @@
-.card-pokemon {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+@font-face {
+    font-family: pokeHollow;
+    src: url(../src/fonts/Pokemon\ Hollow.ttf);
+}
+
+@font-face {
+    font-family: 'pokeSolid';
+    src: url(../src/fonts/Pokemon\ Solid.ttf);
+}
+
+* {
+    box-sizing: border-box; 
+  }
+  
+body {
+    font-family: 'roboto', sans-serif;
+    font-size: 1rem;
+    background-color: #fff;
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+/* Estilos header */  
+header {
+    background-color: #EF4036;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.logo {
+    width: 380px;
+    height: 90px;
+}
+
+.burger-menu {
+    display: none;
+}
+
+/* Título */
+h1 {
+    font-family: 'pokeSolid';
+    font-size: 3rem;
+    color: #396BBA;
+    text-align: center;
+}
+
+/* .card-pokemon {
     background-color: #ecd55578;
     border: 2px solid #bfbbbbcf;
     border-radius: 5px;
     width: 18%;
     margin-bottom: 20px;
-}
-#section{
-    display: flex;
+} */
+#pokemon-cards{
+    display: none;
+    /* display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between; */
+}
+
+/* Estilos footer */
+footer {
+    background-color: #363638;
+    padding: 1rem 6.5rem;
+    font-size: 1.5rem;
+    color: #A19E9E;
+    display: flex;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.oficial-site a {
+    color: #A19E9E;
+}
+
+.oficial-site {
+    margin-right: 2rem;
+}
+
+.authors {
+    font-size: 1.2rem;
+}
+
+.pokemon-go {
+    width: 139px;
+    height: 76px;
+    margin-right: 2rem;
+}
+
+/* Estilos mobile */
+@media (max-width: 768px) {
+    /* Estilos header */
+    header {
+        padding: .7rem 1.3rem;
+        justify-content: space-between;
+    }
+    
+    .logo {
+        width: 170px;
+        height: 50px;
+    } 
+
+    .burger-menu {
+        display: inline-block;
+        width: 50px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    /* Estilos footer */
+    footer {
+        padding: .7rem 1.3rem;
+    }
+    
+    .oficial-site {
+        margin-right: 2rem;
+        font-size: 1rem;
+    }
+    
+    .authors {
+        font-size: 0.8rem;
+    }
+    
+    .pokemon-go {
+        width: 85px;
+        height: 55px;
+        margin-right: 2rem;
+    }
 }
