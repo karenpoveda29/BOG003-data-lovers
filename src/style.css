@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 @font-face {
-    font-family: pokeHollow;
+    font-family: 'pokeHollow';
     src: url(../src/fonts/Pokemon\ Hollow.ttf);
 }
 
@@ -29,6 +29,7 @@ p {
 header {
     background-color: #EF4036;
     padding: 1rem 0;
+    margin-bottom: 1.5rem;
     display: flex;
     justify-content: center;
 }
@@ -44,25 +45,61 @@ header {
 
 /* Título */
 h1 {
-    font-family: 'pokeSolid';
-    font-size: 3rem;
+    font-family: 'roboto';
+    font-size: 2rem;
     color: #396BBA;
     text-align: center;
+    margin: 0;
+    margin-bottom: 1.5rem;
 }
 
-/* .card-pokemon {
-    background-color: #ecd55578;
-    border: 2px solid #bfbbbbcf;
-    border-radius: 5px;
-    width: 18%;
-    margin-bottom: 20px;
-} */
-#pokemon-cards{
-    display: none;
-    /* display: flex;
-    flex-direction: row;
+/* Estilos cards section */ 
+#cards-section{
+    padding: 0 6.5rem;
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; */
+    justify-content: space-between;
+}
+
+.pokemon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+    background-color: rgba(255, 224, 49, 0.2);
+    border-radius: 15px;
+    box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.2); /* h-shadow,v-shadow,blur,color */  
+    width: 14rem;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.image-pokemon{
+    margin-bottom: 1.5rem;
+}
+
+.number, .type {
+    margin-bottom: .5rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin-bottom: .5rem;
+}
+
+.type-style {
+    text-transform: capitalize;
+    margin-right: .3rem;
+    margin-bottom: .5rem;
+    padding: .3rem;
+    border-radius: 5px;
+    background-color: #EF4036;
+}
+
+.combat-power {
+    font-weight: 700;
 }
 
 /* Estilos footer */
@@ -117,13 +154,22 @@ footer {
         font-size: 1.5rem;
     }
 
+    /* Estilos cards section */
+    #cards-section {
+        padding: 0 1.3rem;
+        justify-content: center;
+    }
+
+    .pokemon-card {
+        margin-right: 1.5rem;
+    }
+
     /* Estilos footer */
     footer {
         padding: .7rem 1.3rem;
     }
     
     .oficial-site {
-        margin-right: 2rem;
         font-size: 1rem;
     }
     
@@ -134,6 +180,5 @@ footer {
     .pokemon-go {
         width: 85px;
         height: 55px;
-        margin-right: 2rem;
     }
 }
