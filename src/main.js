@@ -16,6 +16,7 @@ const insertPokemon = (number,types,name,maxCp,img) => {
             </div>           
             <p class="combat-power">Max-PC ${maxCp}</p>            
         </div>`); 
+    
 } 
 
 /* Esta función es para mostrar los 251 */
@@ -83,11 +84,28 @@ filterSelect.addEventListener("change", () => {
     } else {
         //mostrar mensaje del tipo elegido
         showAllPokemon(chosenType);
+        porcentajePokemon(data.pokemon, chosenType, userChoice);
     }
-})
+});
 
 
 
+
+
+
+//Total pokemones y el total de pokemones por filtro
+const porcentajePokemon = (pokemon, chosenType, userChoice) => {
+   const cantidadTotalPokemon = pokemon.length;
+   const totalPorFiltro = chosenType.length;
+   const porcentaje = parseFloat((100 * totalPorFiltro) / cantidadTotalPokemon).toFixed(2); 
+
+   const messageType = document.getElementById("message-type");
+   messageType.insertAdjacentHTML("beforeend", `
+      <p> Tipo ${userChoice} </p>
+      <p>Total ${chosenType.length} </p> 
+      <p> ${porcentaje} % </p>
+    `);
+}
 /* 
 Para el cálculo (total pokemon por tipo) buscar un método que nos permita saber el largo del array chosenType y meter este dato dentro de un span y mostrarlo en la pantalla como parte del mensaje grande */ 
 
