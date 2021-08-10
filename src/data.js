@@ -7,7 +7,7 @@ export const filterType = (pokemons, type) => {
 };
 
 
-export const calcularPorcentaje = (totalPokemones, totalPorTipo) => {
-  const porcentaje = parseFloat((100 * totalPorTipo) / totalPokemones).toFixed(2);
-  return porcentaje;
+export const getPercentage = (totalPerType, totalPokemon) => {
+  const percentage = parseFloat((100 * totalPerType) / totalPokemon).toFixed(2);
+  return percentage;
 };
