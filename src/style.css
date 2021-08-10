@@ -53,6 +53,21 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+/* Menú */
+#menu{
+    padding:0 6.5rem 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.select-menu{
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: #396BBA;
+    padding: .5rem 1rem;
+}
+
 /* Estilos cards section */ 
 #cards-section{
     padding: 0 6.5rem;
@@ -86,20 +101,108 @@ h1 {
     font-size: 1.5rem;
     font-weight: 700;
     text-transform: capitalize;
-    margin-bottom: .5rem;
-}
-
-.type-style {
-    text-transform: capitalize;
-    margin-right: .3rem;
-    margin-bottom: .5rem;
-    padding: .3rem;
-    border-radius: 5px;
-    background-color: #EF4036;
+    margin-bottom: 1rem;
 }
 
 .combat-power {
     font-weight: 700;
+}
+
+/* Estilos para los tipos */
+.types {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.type-style {
+    padding: .3rem .9rem;
+    border-radius: 6px;
+}
+
+.type-style:first-child {
+    margin-right: .5rem;
+}
+
+.grass {
+    background-color: #8AD43A;
+}
+
+.poison {
+    background-color: #C473CD;
+    color: #fff;
+}
+
+.bug{
+    background-color: #62A52F;
+    color: #fff;
+}
+
+.dragon {
+    background-image: linear-gradient(to bottom, #39A3D4 50%, #FF6346 50%);
+    color: #fff;
+}
+
+.fairy {
+    background-color: #FFB0EA;
+}
+
+.fire {
+    background-color: #FF7600;
+    color: #fff;
+}
+
+.ghost {
+    background-color: #8259A7;
+    color: #fff;
+}
+
+.ground {
+    background-image: linear-gradient(to bottom, #F8E300 50%, #AC9B2D 50%);
+}
+
+.normal {
+    background-color: #A3ACB0;
+}
+
+.psychic {
+    background-color: #FF4AB9;
+    color: #fff;
+}
+
+.steel {
+    background-color: #99B8B9;
+}
+
+.dark {
+    background-color: #707070;
+    color: #fff;
+}
+
+.electric {
+    background-color: #EFDA00;
+}
+
+.fighting {
+    background-color: #E26000;
+    color: #fff;
+}
+
+.flying {
+    background-image: linear-gradient(to bottom, #00C8F5 50%, #BEB9B8 50%);
+}
+
+.ice {
+    background-color: #06C5EC;
+}
+
+.rock {
+    background-color: #A58F00;
+    color: #fff;
+}
+
+.water {
+    background-color: #2D90C9;
+    color: #fff;
 }
 
 /* Estilos footer */
