@@ -42,8 +42,9 @@ function createSelectTypes() {
     
     /* Crear la etiqueta select*/
     const select = document.createElement("select");
+    select.setAttribute("class", "select-menu");
     const option = document.createElement("option");
-    option.innerHTML = "Selecciona un tipo";
+    option.innerHTML = "--Selecciona un tipo--";
     select.appendChild(option);
 
     /* Crear las 18 opciones con cada uno de los tipos */
@@ -78,7 +79,7 @@ filterSelect.addEventListener("change", () => {
     document.getElementById("cards-section").innerHTML = "";
     const userChoice = filterSelect.value;
     const chosenType = filterType(data.pokemon, userChoice);
-    if (userChoice == "Selecciona un tipo"){
+    if (userChoice == "--Selecciona un tipo--"){
         showAllPokemon(data.pokemon);
     } else {
         //mostrar mensaje del tipo elegido
