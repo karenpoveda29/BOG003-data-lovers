@@ -1,4 +1,4 @@
-import { filterType } from './data.js';
+import { filterType, getPercentage } from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 /* Mostrar Pokemones */
@@ -12,11 +12,10 @@ const insertPokemon = (number,types,name,maxCp,img) => {
             <p class="number">${number}</p>
             <p class="name">${name}</p>
             <div class="types">
-                ${types.map(type => `<span class="type-style ${type}">${type}</span>`).join("")}
+                ${types.map(type => `<p class="type-style ${type}">${type}</p>`).join("")}
             </div>           
             <p class="combat-power">Max-PC ${maxCp}</p>            
-        </div>`); 
-    
+        </div>`);     
 } 
 
 /* Esta función es para mostrar los 251 */
@@ -78,37 +77,45 @@ const removeDuplicates = (array) => {
 const filterSelect = createSelectTypes();
 filterSelect.addEventListener("change", () => { 
     document.getElementById("cards-section").innerHTML = "";
+    document.getElementById("message-type").innerHTML = "";
     const userChoice = filterSelect.value;
     const chosenType = filterType(data.pokemon, userChoice);
     if (userChoice == "--Selecciona un tipo--"){
-        showAllPokemon(data.pokemon);
+        document.getElementById("message-type").style.display = "none";
+        const title = document.getElementById("title").removeAttribute("style");
+        showAllPokemon(data.pokemon);        
     } else {
         //mostrar mensaje del tipo elegido
+        title.style.display = "none";
+        showPercentagePerType(data.pokemon, chosenType, userChoice);
         showAllPokemon(chosenType);
-        porcentajePokemon(data.pokemon, chosenType, userChoice);
     }
 });
 
-
-
-
-
-
-//Total pokemones y el total de pokemones por filtro
-const porcentajePokemon = (pokemon, chosenType, userChoice) => {
-   const cantidadTotalPokemon = pokemon.length;
-   const totalPorFiltro = chosenType.length;
-   const porcentaje = parseFloat((100 * totalPorFiltro) / cantidadTotalPokemon).toFixed(2); 
+/* Total y porcentaje de pokemones por tipo */ 
+const showPercentagePerType = (pokemon, chosenType, userChoice) => {
+   const totalPokemon = pokemon.length;
+   const totalPerType = chosenType.length;
+   const percentage = getPercentage(totalPerType, totalPokemon) 
 
    const messageType = document.getElementById("message-type");
+   messageType.setAttribute("class", userChoice);
    messageType.insertAdjacentHTML("beforeend", `
-      <p> Tipo ${userChoice} </p>
-      <p>Total ${chosenType.length} </p> 
-      <p> ${porcentaje} % </p>
+    <div class="calculations">  
+      <p>Tipo ${userChoice}</p>
+      <p>Total: ${chosenType.length}</p> 
+      <p>Porcentaje: ${percentage}%</p>
+    </div>
+    <p class="percentage-note">Porcentaje del tipo en las regiones Kanto y Johto</p>  
     `);
 }
-/* 
-Para el cálculo (total pokemon por tipo) buscar un método que nos permita saber el largo del array chosenType y meter este dato dentro de un span y mostrarlo en la pantalla como parte del mensaje grande */ 
+
+/* Ordenar los pokemones por puntaje de MAX-PC */
+
+/*COMPLETAR SEGUNDA H.U.
+1. hacer el menú el hamburguesa
+2. hacer los tests unitarios de las funciones de filtrar y calcular - mirar configuración de ESLINT
+3. Figma */
 
 
 
