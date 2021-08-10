@@ -53,9 +53,13 @@ h1 {
     margin-bottom: 1.5rem;
 }
 
+/* Mensaje de total de pokemones */
+
 #message-type {
+    padding: 1rem;
     margin: 0 6.5rem;
     margin-bottom: 1.5rem;
+    border-radius: 10px;
     display: flex;
     flex-direction: column;    
     align-items: center;
@@ -81,7 +85,7 @@ h1 {
 }
 
 .percentage-note{
-    font-size: .8rem;
+    font-size: .9rem;
 }
 
 /* Menú */
@@ -105,6 +109,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .pokemon-card {
@@ -136,6 +141,7 @@ h1 {
 }
 
 .combat-power {
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -291,6 +297,7 @@ footer {
     /* Mensaje de cálculos */
     #message-type {
         margin: 0 1.3rem 1.5rem;
+        padding: 1rem;
     }
     
     .calculations {
