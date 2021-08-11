@@ -78,15 +78,16 @@ const filterSelect = createSelectTypes();
 filterSelect.addEventListener("change", () => { 
     document.getElementById("cards-section").innerHTML = "";
     document.getElementById("message-type").innerHTML = "";
+    document.getElementById("message-type").style.display = "none";
     const userChoice = filterSelect.value;
     const chosenType = filterType(data.pokemon, userChoice);
     if (userChoice == "--Selecciona un tipo--"){
-        document.getElementById("message-type").style.display = "none";
         const title = document.getElementById("title").removeAttribute("style");
         showAllPokemon(data.pokemon);        
     } else {
         //mostrar mensaje del tipo elegido
         title.style.display = "none";
+        document.getElementById("message-type").removeAttribute("style");
         showPercentagePerType(data.pokemon, chosenType, userChoice);
         showAllPokemon(chosenType);
     }
@@ -109,6 +110,18 @@ const showPercentagePerType = (pokemon, chosenType, userChoice) => {
     <p class="percentage-note">Porcentaje del tipo en las regiones Kanto y Johto</p>  
     `);
 }
+
+/* Evento para mostrar los selects en mobile */
+const burgerMenu = document.getElementById("burger-menu");
+
+burgerMenu.addEventListener("click", function(){
+    const menu = document.getElementById("menu");
+    if(menu.classList.contains("show")){
+        menu.classList.remove("show");
+    } else{
+        menu.classList.add("show");
+    }
+});
 
 /* Ordenar los pokemones por puntaje de MAX-PC */
 
