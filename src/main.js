@@ -56,8 +56,8 @@ function createSelectTypes() {
     })
 
     /* Agregamos el select al DOM */
-    const menu = document.getElementById("menu");
-    menu.appendChild(select);
+    const filterContainer = document.getElementById("filter-container");
+    filterContainer.appendChild(select);
 
     return select; 
 }
