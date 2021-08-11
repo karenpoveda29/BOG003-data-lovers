@@ -103,6 +103,10 @@ h1 {
     padding: .5rem 1rem;
 }
 
+.select-menu.sort {
+    margin-right: 1.5rem;
+}
+
 /* Estilos cards section */ 
 #cards-section{
     padding: 0 6.5rem;
@@ -285,6 +289,7 @@ footer {
         height: 50px;
     } 
 
+    /* Estilos hamburger menu */
     .burger-menu {
         display: inline-block;
         width: 50px;
