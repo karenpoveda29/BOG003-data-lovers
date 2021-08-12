@@ -82,11 +82,11 @@ filterSelect.addEventListener("change", () => {
     const userChoice = filterSelect.value;
     const chosenType = filterType(data.pokemon, userChoice);
     if (userChoice == "--Selecciona un tipo--"){
-        const title = document.getElementById("title").removeAttribute("style");
+        document.getElementById("title").removeAttribute("style");
         showAllPokemon(data.pokemon);        
     } else {
         //mostrar mensaje del tipo elegido
-        title.style.display = "none";
+        document.getElementById("title").style.display = "none";
         document.getElementById("message-type").removeAttribute("style");
         showPercentagePerType(data.pokemon, chosenType, userChoice);
         showAllPokemon(chosenType);
@@ -97,7 +97,7 @@ filterSelect.addEventListener("change", () => {
 const showPercentagePerType = (pokemon, chosenType, userChoice) => {
    const totalPokemon = pokemon.length;
    const totalPerType = chosenType.length;
-   const percentage = getPercentage(totalPerType, totalPokemon) 
+   const percentage = getPercentage(totalPerType, totalPokemon);
 
    const messageType = document.getElementById("message-type");
    messageType.setAttribute("class", userChoice);
