@@ -60,7 +60,6 @@ header {
 
 .select-menu.sort {
     margin-right: 1.5rem;
-    display: none;
 }
 
 /* Título */
@@ -318,7 +317,6 @@ footer {
         width: 100%;
         text-align: center;
         padding: 1rem;
-        display: none;
     }
     
     #filter-container {
