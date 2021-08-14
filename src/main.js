@@ -1,4 +1,4 @@
-import { filterType, getPercentage } from './data.js';
+import { filterType, getPercentage, sortedDescendent, sortedAscendent} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 /* Mostrar Pokemones */
@@ -80,6 +80,7 @@ filterSelect.addEventListener("change", () => {
     document.getElementById("message-type").innerHTML = "";
     document.getElementById("message-type").style.display = "none";
     const userChoice = filterSelect.value;
+    
     const chosenType = filterType(data.pokemon, userChoice);
     if (userChoice == "--Selecciona un tipo--"){
         document.getElementById("title").removeAttribute("style");
@@ -123,18 +124,20 @@ burgerMenu.addEventListener("click", function(){
     }
 });
 
-/* Ordenar los pokemones por puntaje de MAX-PC */
+/* Agregar evento change al select para ordenar */
+const sortSelect = document.getElementById("sort-menu");
 
-/*COMPLETAR SEGUNDA H.U.
-1. hacer el menú el hamburguesa
-2. hacer los tests unitarios de las funciones de filtrar y calcular - mirar configuración de ESLINT
-3. Figma */
-
-
-
-
-
-
-
-
-
+sortSelect.addEventListener("change", () => {
+    const userChoice = sortSelect.value;
+    const pokemons = data.pokemon;
+    document.getElementById("cards-section").innerHTML = "";
+    if(userChoice === "highestFirst"){
+        const highestFirst = sortedDescendent(pokemons);
+        showAllPokemon(highestFirst);        
+    } else if(userChoice === "lowestFirst"){
+        const lowestFirst = sortedAscendent(pokemons);
+        showAllPokemon(lowestFirst);
+    } else if(userChoice == "--Ordena por max-pc--"){
+        showAllPokemon(pokemons);
+    }
+});
