@@ -1,4 +1,67 @@
-# Data Lovers
+# Proyecto 2, Bootcamp de Laboratoria
+
+# Data Lovers - Pokémon Go
+
+## definición de producto
+
+Nuestro producto es una página web llamada Pokémaka que está dirigida principalmente a los usuarios del juego Pokémon Go. En esta página los usuarios podrán ver los 251 pokemones de las regiones Kanto y Johto, los podrán ordenar de mayor a menor y viceversa, por su puntaje de máximo poder de combate. 
+
+También podrán filtrar los pokemones por alguno de los 18 tipos donde podrán ver el número total de pokemones, junto con el porcentaje que ocupa el tipo en ambas regiones. 
+
+## Historias de usuario
+Desarrollamos el proyecto a partir de tres historias de usuario:
+
+- **Historia de usuario 1:** YO COMO jugador, QUIERO ver todos los pokemones en la página principal, PARA poder identificar alguno por la imagen, cuando no conozco su nombre o su número.
+
+- **Historia de usuario 2:** YO COMO jugador, QUIERO filtrar los pokemomes por tipo, PARA conocer cuántos y cuáles hay de cada tipo.
+
+- **Historia de usuario 3:** YO COMO jugador, QUIERO ordenar los pokemones por su puntaje de max-pc, de menor a mayor y viceversa, PARA saber cuáles son los más fuertes.
+
+## Prototipo de baja fidelidad
+
+Para crear los prototipos de baja fidelidad realizamos una encuesta para conocer mejor a los posibles usuarios.
+
+Link de la [encuesta](https://forms.gle/TACi5WWseSJmutZm9)
+
+A continuación se muestra el prototipo de baja fidelidad que se utilizó para hacer los test de usabilidad. 
+
+Los prototipos de las otras pantallas se pueden encontrar en la carpeta src/images/prototypes. 
+
+### Pantalla principal en Desktop
+![Pantalla principal Desktop](src/images/sketch1/principal_desktop.jpg)
+
+## Test de usabilidad
+
+- Todos los  usuarios coincidieron en que preferían hacer scroll para ver todos los pokemones en vez de tener que seleccionar el número de pokemones que se verían por pantalla. 
+
+- Los usuarios expresaron que es útil filtrar los pokemones por tipo, combinándolos con el ordenado por debilidades o por número de poder de combate, ya que es de gran ayuda al momento de escoger los mejores pokemones  para un combate.
+
+- Los usuarios hacen referencia a que no es muy común buscar el pokémon por número porque usualmente no se tiene esa información al momento de la búsqueda, pero que sí es más común buscarlo por nombre, tipo o por la foto. 
+
+- Otro usuario comentó que sería útil también poder filtrar los pokémones por regiones ya que eso facilita la libre exploración.
+
+- En general comentaron que la distribución era correcta y agradable de explorar y que era importante que tuviera un tamaño adecuado para poder visualizar bien la información de cada pokémon.
+
+Este es el prototipo después de incluir el feedback de los usuarios, obtenido en los test de usabilidad. 
+
+### Pantalla principal en Desktop
+![Pantalla principal Desktop](src/images/sketch2/principal_desktop.jpg)
+
+## Diseño de la interfaz de usuario
+
+En Figma creamos los prototipos de alta fidelidad para la pantalla principal en desktop y mobile, como también para la pantalla de filtrado por tipo fuego y la pantalla del menú en mobile. 
+
+Se puede ver todo el diseño en este link de [Figma](https://www.figma.com/file/3tsiDvgub5He1zmlyo6uW2/Pokemaka?node-id=0%3A1)
+
+### Pantalla principal en Desktop
+![Pantalla principal Desktop](src/images/principal_desktop.jpg)
+
+### Pantalla principal en Desktop
+![Pantalla principal Mobile](src/images/principal_mobile.jpg)
+
+___
+
+# Instrucciones de desarrollo dadas por Laboratoria
 
 ## Índice
 
