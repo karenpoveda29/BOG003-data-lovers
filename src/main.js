@@ -1,5 +1,6 @@
-import { filterType, getPercentage, sortedDescendent, sortedAscendent} from './data.js';
+import { filterType, getPercentage, sortedDescendent, sortedAscendent, sortedByNumber} from './data.js';
 import data from './data/pokemon/pokemon.js';
+let currentArray = data.pokemon;
 
 /* Mostrar Pokemones */
 
@@ -39,14 +40,12 @@ function createSelectTypes() {
     const pokemons = data.pokemon;
     const allTypes = pokemons.map(pokemon => pokemon.type).flat(); //array de 362 tipos repetidos
     const singleTypes = removeDuplicates(allTypes); //array con 18 tipos sin repetir
-    
     /* Crear la etiqueta select*/
     const select = document.createElement("select");
     select.setAttribute("class", "select-menu");
     const option = document.createElement("option");
     option.innerHTML = "--Selecciona un tipo--";
     select.appendChild(option);
-
     /* Crear las 18 opciones con cada uno de los tipos */
     singleTypes.forEach(type => {
         const option = document.createElement("option");
@@ -54,7 +53,6 @@ function createSelectTypes() {
         option.value = type;
         select.appendChild(option);
     })
-
     /* Agregamos el select al DOM */
     const filterContainer = document.getElementById("filter-container");
     filterContainer.appendChild(select);
@@ -62,7 +60,7 @@ function createSelectTypes() {
     return select; 
 }
 
-/* función genérica para remover elementos repetidos en un array*/
+/* función genérica para remover elementos repetidos en un array, se usa dentro de la función createSelectTypes*/
 const removeDuplicates = (array) => {
     let uniqueElements = []; 
     array.forEach(element => {
@@ -77,20 +75,21 @@ const removeDuplicates = (array) => {
 const filterSelect = createSelectTypes();
 filterSelect.addEventListener("change", () => { 
     document.getElementById("cards-section").innerHTML = "";
-    document.getElementById("message-type").innerHTML = "";
-    document.getElementById("message-type").style.display = "none";
+    const messageSection = document.getElementById("message-type");
+    messageSection.innerHTML = "";
     const userChoice = filterSelect.value;
-    
-    const chosenType = filterType(data.pokemon, userChoice);
     if (userChoice == "--Selecciona un tipo--"){
+        messageSection.classList.add("hide");
         document.getElementById("title").removeAttribute("style");
-        showAllPokemon(data.pokemon);        
+        currentArray = data.pokemon;        
+        showAllPokemon(currentArray);
     } else {
         //mostrar mensaje del tipo elegido
         document.getElementById("title").style.display = "none";
-        document.getElementById("message-type").removeAttribute("style");
-        showPercentagePerType(data.pokemon, chosenType, userChoice);
-        showAllPokemon(chosenType);
+        messageSection.classList.remove("hide");
+        currentArray = filterType(data.pokemon, userChoice);
+        showPercentagePerType(data.pokemon, currentArray, userChoice);
+        showAllPokemon(currentArray);
     }
 });
 
@@ -101,7 +100,7 @@ const showPercentagePerType = (pokemon, chosenType, userChoice) => {
    const percentage = getPercentage(totalPerType, totalPokemon);
 
    const messageType = document.getElementById("message-type");
-   messageType.setAttribute("class", userChoice);
+   messageType.setAttribute("class", `${userChoice} message-type`);
    messageType.insertAdjacentHTML("beforeend", `
     <div class="calculations">  
       <p>Tipo ${userChoice}</p>
@@ -129,15 +128,15 @@ const sortSelect = document.getElementById("sort-menu");
 
 sortSelect.addEventListener("change", () => {
     const userChoice = sortSelect.value;
-    const pokemons = data.pokemon;
     document.getElementById("cards-section").innerHTML = "";
     if(userChoice === "highestFirst"){
-        const highestFirst = sortedDescendent(pokemons);
-        showAllPokemon(highestFirst);        
+        currentArray = sortedDescendent(currentArray);
+        showAllPokemon(currentArray);        
     } else if(userChoice === "lowestFirst"){
-        const lowestFirst = sortedAscendent(pokemons);
-        showAllPokemon(lowestFirst);
-    } else if(userChoice == "--Ordena por max-pc--"){
-        showAllPokemon(pokemons);
+        currentArray = sortedAscendent(currentArray);
+        showAllPokemon(currentArray);
+    } else { //create a function 
+        currentArray = sortedByNumber(currentArray);
+        showAllPokemon(currentArray);
     }
 });
