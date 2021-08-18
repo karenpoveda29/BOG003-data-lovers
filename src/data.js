@@ -14,19 +14,29 @@ export const getPercentage = (totalPerType, totalPokemon) => {
 
 
 export const sortedAscendent = (pokemons) => {
-  const lowToHigh = pokemons.sort((a, b) => {
+  const pokemonsCopy = pokemons.map(n => n);
+  const lowToHigh = pokemonsCopy.sort((a, b) => {
   return  a.stats["max-cp"] - b.stats["max-cp"];
   });
   return lowToHigh;
 };
 
 export const sortedDescendent = (pokemons) => {
-  const highToLow = pokemons.sort((a, b) => {
-    return b.stats["max-cp"] - a.stats["max-cp"];
+  const pokemonsCopy = pokemons.map(n => n);
+  const highToLow = pokemonsCopy.sort((a, b) => {
+  return b.stats["max-cp"] - a.stats["max-cp"];
   });
   return highToLow;
 }; 
-    
+
+export const sortedByNumber = (pokemons) => {
+  const pokemonsCopy = pokemons.map(n => n);
+  const lowToHigh = pokemonsCopy.sort((a, b) => {
+  return  Number(a.num) - Number(b.num);
+  });
+  return lowToHigh;
+};
+
 
 
 
