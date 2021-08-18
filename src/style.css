@@ -74,7 +74,7 @@ h1 {
 
 /* Mensaje de total de pokemones */
 
-#message-type {
+.message-type {
     padding: 1rem;
     margin: 0 6.5rem;
     margin-bottom: 1.5rem;
@@ -335,7 +335,7 @@ footer {
     }
 
     /* Mensaje de cálculos */
-    #message-type {
+    .message-type {
         margin: 1.5rem 1.3rem 1.5rem;
         padding: 1rem;
     }
@@ -387,4 +387,8 @@ footer {
         width: 85px;
         height: 55px;
     }
+}
+
+.hide{
+    display: none;
 }
