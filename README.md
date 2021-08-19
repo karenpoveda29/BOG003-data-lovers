@@ -2,7 +2,7 @@
 
 # Data Lovers - Pokémon Go
 
-## definición de producto
+## Definición de producto
 
 Nuestro producto es una página web llamada Pokémaka que está dirigida principalmente a los usuarios del juego Pokémon Go. En esta página los usuarios podrán ver los 251 pokemones de las regiones Kanto y Johto, los podrán ordenar de mayor a menor y viceversa, por su puntaje de máximo poder de combate. 
 
@@ -32,6 +32,8 @@ Los prototipos de las otras pantallas se pueden encontrar en la carpeta src/imag
 
 ## Test de usabilidad
 
+Los test de usabilidad los aplicamos a 6 personas y a continuación presentamos el feedback que recibimos de los usuarios.
+
 - Todos los  usuarios coincidieron en que preferían hacer scroll para ver todos los pokemones en vez de tener que seleccionar el número de pokemones que se verían por pantalla. 
 
 - Los usuarios expresaron que es útil filtrar los pokemones por tipo, combinándolos con el ordenado por debilidades o por número de poder de combate, ya que es de gran ayuda al momento de escoger los mejores pokemones  para un combate.
@@ -54,10 +56,10 @@ En Figma creamos los prototipos de alta fidelidad para la pantalla principal en 
 Se puede ver todo el diseño en este link de [Figma](https://www.figma.com/file/3tsiDvgub5He1zmlyo6uW2/Pokemaka?node-id=0%3A1)
 
 ### Pantalla principal en Desktop
-![Pantalla principal Desktop](src/images/principal_desktop.jpg)
+![Pantalla principal Desktop](src/images/principal_desktop.png)
 
-### Pantalla principal en Desktop
-![Pantalla principal Mobile](src/images/principal_mobile.jpg)
+### Pantalla principal en Mobile
+![Pantalla principal Mobile](src/images/principal_mobile.png)
 
 ___
 
