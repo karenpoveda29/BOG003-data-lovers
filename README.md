@@ -1,5 +1,7 @@
 # Proyecto 2, Bootcamp de Laboratoria
 
+Este es el link del proyecto [proyecto](https://karlopolas.github.io/BOG003-data-lovers/src/index.html)
+
 # Data Lovers - Pokémon Go
 
 ## Definición de producto
