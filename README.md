@@ -2,7 +2,7 @@
 
 ![Logo de pokemaka](src/images/logo.png)
 
-Este es el link del proyecto [proyecto](https://karlopolas.github.io/BOG003-data-lovers/src/index.html)
+Este es el link del proyecto [proyecto](https://karenpoveda29.github.io/BOG003-data-lovers/src/index.html)
 
 # Data Lovers - Pokémon Go
 
